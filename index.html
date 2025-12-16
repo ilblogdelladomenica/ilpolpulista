@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IL POLPULISTA - Anatomia del Mondo Nuovo</title>
+    <title>IL POLPULISTA - Archivio</title>
     <!-- Tailwind CSS for styling -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts -->
@@ -38,6 +38,26 @@
             margin-right: 1rem;
         }
 
+        /* Hide elements helper */
+        .hidden-edition {
+            display: none;
+        }
+
+        /* Active tab style */
+        .tab-active {
+            background-color: #b91c1c; /* red-700 */
+            color: white;
+            border-color: #b91c1c;
+        }
+        .tab-inactive {
+            background-color: white;
+            color: #374151; /* gray-700 */
+            border-color: #d1d5db; /* gray-300 */
+        }
+        .tab-inactive:hover {
+            background-color: #f3f4f6; /* gray-100 */
+        }
+
         /* Responsive overrides */
         @media (max-width: 1024px) {
             .separator-r {
@@ -51,248 +71,319 @@
         }
     </style>
 </head>
-<body class="bg-[#f9f7f1] text-[#1a1a1a] p-2 md:p-6 min-h-screen">
+<body class="bg-[#f2f0e9] text-[#1a1a1a] p-2 md:p-6 min-h-screen">
 
-    <!-- Wrapper -->
-    <div class="max-w-[1400px] mx-auto bg-white shadow-xl p-4 md:p-8 border-t-4 border-red-700">
+    <!-- NAVIGATION MENU -->
+    <nav class="max-w-[1400px] mx-auto mb-4 flex flex-col md:flex-row gap-2 items-center justify-between font-sans-condensed">
+        <div class="flex gap-2">
+            <button onclick="switchEdition('16-dic')" id="btn-16-dic" class="tab-active px-6 py-2 border-2 uppercase tracking-widest font-bold text-sm transition-colors shadow-sm">
+                16 Dicembre 2025
+            </button>
+            <button onclick="switchEdition('09-dic')" id="btn-09-dic" class="tab-inactive px-6 py-2 border-2 uppercase tracking-widest font-bold text-sm transition-colors shadow-sm">
+                09 Dicembre 2025
+            </button>
+        </div>
+        <div class="text-xs uppercase tracking-widest text-gray-500">Archivio Digitale</div>
+    </nav>
 
-        <!-- HEADER / MASTHEAD -->
+    <!-- WRAPPER FOR EDITION 16 DEC (DEFAULT) -->
+    <div id="edition-16-dic" class="max-w-[1400px] mx-auto bg-white shadow-xl p-4 md:p-8 border-t-4 border-red-700">
+        <!-- HEADER 16 DEC -->
         <header class="mb-6">
-            <!-- Top Ad Row & Title -->
             <div class="flex flex-col md:flex-row justify-between items-center border-b-2 border-black pb-4 mb-2">
-                
-                <!-- Left Ear (Polpo SVG) -->
+                <!-- Left Polpo -->
                 <div class="hidden md:flex w-32 h-24 items-center justify-center p-1">
-                    <svg viewBox="0 0 100 100" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Yellow Body -->
-                        <path d="M50 15 C30 15 15 30 15 50 C15 65 25 75 30 75 C35 75 35 65 30 60 C25 55 25 45 30 40 C35 35 65 35 70 40 C75 45 75 55 70 60 C65 65 65 75 70 75 C75 75 85 65 85 50 C85 30 70 15 50 15 Z" fill="#FFD700" stroke="#E6AC00" stroke-width="2"/>
-                        <!-- Tentacles Left -->
-                        <path d="M20 50 Q10 60 15 70 Q20 80 10 85" fill="none" stroke="#FFD700" stroke-width="8" stroke-linecap="round"/>
-                        <path d="M20 50 Q10 60 15 70 Q20 80 10 85" fill="none" stroke="#E6AC00" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
-                        <path d="M30 60 Q25 75 35 85" fill="none" stroke="#FFD700" stroke-width="8" stroke-linecap="round"/>
-                        <path d="M30 60 Q25 75 35 85" fill="none" stroke="#E6AC00" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
-                         <!-- Tentacles Right -->
-                        <path d="M80 50 Q90 60 85 70 Q80 80 90 85" fill="none" stroke="#FFD700" stroke-width="8" stroke-linecap="round"/>
-                        <path d="M80 50 Q90 60 85 70 Q80 80 90 85" fill="none" stroke="#E6AC00" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
-                        <path d="M70 60 Q75 75 65 85" fill="none" stroke="#FFD700" stroke-width="8" stroke-linecap="round"/>
-                        <path d="M70 60 Q75 75 65 85" fill="none" stroke="#E6AC00" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
-                         <!-- Tentacles Center -->
-                        <path d="M42 65 Q40 80 45 88" fill="none" stroke="#FFD700" stroke-width="7" stroke-linecap="round"/>
-                        <path d="M58 65 Q60 80 55 88" fill="none" stroke="#FFD700" stroke-width="7" stroke-linecap="round"/>
-                        <!-- Face -->
-                        <circle cx="40" cy="45" r="3" fill="#333"/> <!-- Eye L -->
-                        <circle cx="60" cy="45" r="3" fill="#333"/> <!-- Eye R -->
-                        <path d="M42 55 Q50 62 58 55" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round"/> <!-- Smile -->
-                        <!-- Highlight -->
-                        <ellipse cx="35" cy="30" rx="5" ry="3" fill="white" opacity="0.4"/>
-                    </svg>
+                   <svg viewBox="0 0 100 100" class="w-full h-full" xmlns="http://www.w3.org/2000/svg"><path d="M50 15 C30 15 15 30 15 50 C15 65 25 75 30 75 C35 75 35 65 30 60 C25 55 25 45 30 40 C35 35 65 35 70 40 C75 45 75 55 70 60 C65 65 65 75 70 75 C75 75 85 65 85 50 C85 30 70 15 50 15 Z" fill="#FFD700" stroke="#E6AC00" stroke-width="2"/><path d="M20 50 Q10 60 15 70 Q20 80 10 85" fill="none" stroke="#FFD700" stroke-width="8" stroke-linecap="round"/><path d="M20 50 Q10 60 15 70 Q20 80 10 85" fill="none" stroke="#E6AC00" stroke-width="2" stroke-linecap="round" opacity="0.5"/><path d="M30 60 Q25 75 35 85" fill="none" stroke="#FFD700" stroke-width="8" stroke-linecap="round"/><path d="M30 60 Q25 75 35 85" fill="none" stroke="#E6AC00" stroke-width="2" stroke-linecap="round" opacity="0.5"/><path d="M80 50 Q90 60 85 70 Q80 80 90 85" fill="none" stroke="#FFD700" stroke-width="8" stroke-linecap="round"/><path d="M80 50 Q90 60 85 70 Q80 80 90 85" fill="none" stroke="#E6AC00" stroke-width="2" stroke-linecap="round" opacity="0.5"/><path d="M70 60 Q75 75 65 85" fill="none" stroke="#FFD700" stroke-width="8" stroke-linecap="round"/><path d="M70 60 Q75 75 65 85" fill="none" stroke="#E6AC00" stroke-width="2" stroke-linecap="round" opacity="0.5"/><path d="M42 65 Q40 80 45 88" fill="none" stroke="#FFD700" stroke-width="7" stroke-linecap="round"/><path d="M58 65 Q60 80 55 88" fill="none" stroke="#FFD700" stroke-width="7" stroke-linecap="round"/><circle cx="40" cy="45" r="3" fill="#333"/><circle cx="60" cy="45" r="3" fill="#333"/><path d="M42 55 Q50 62 58 55" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round"/><ellipse cx="35" cy="30" rx="5" ry="3" fill="white" opacity="0.4"/></svg>
                 </div>
-
-                <!-- Main Title -->
+                <!-- Title -->
                 <div class="flex-1 text-center px-4">
-                    <h1 class="font-masthead font-black text-6xl md:text-9xl tracking-tighter leading-none transform scale-y-110">
-                        IL POLPULISTA
-                    </h1>
+                    <h1 class="font-masthead font-black text-6xl md:text-9xl tracking-tighter leading-none transform scale-y-110">IL POLPULISTA</h1>
                     <div class="relative -mt-2 mb-2">
-                        <span class="bg-white px-4 font-body italic text-lg relative z-10">quotidiano</span>
                         <div class="absolute top-1/2 left-0 w-full h-px bg-black -z-0"></div>
                     </div>
                 </div>
-
-                <!-- Right Ear (Polpo SVG) -->
+                <!-- Right Polpo -->
                 <div class="hidden md:flex w-32 h-24 items-center justify-center p-1">
-                    <svg viewBox="0 0 100 100" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Yellow Body -->
-                        <path d="M50 15 C30 15 15 30 15 50 C15 65 25 75 30 75 C35 75 35 65 30 60 C25 55 25 45 30 40 C35 35 65 35 70 40 C75 45 75 55 70 60 C65 65 65 75 70 75 C75 75 85 65 85 50 C85 30 70 15 50 15 Z" fill="#FFD700" stroke="#E6AC00" stroke-width="2"/>
-                        <!-- Tentacles Left -->
-                        <path d="M20 50 Q10 60 15 70 Q20 80 10 85" fill="none" stroke="#FFD700" stroke-width="8" stroke-linecap="round"/>
-                        <path d="M20 50 Q10 60 15 70 Q20 80 10 85" fill="none" stroke="#E6AC00" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
-                        <path d="M30 60 Q25 75 35 85" fill="none" stroke="#FFD700" stroke-width="8" stroke-linecap="round"/>
-                        <path d="M30 60 Q25 75 35 85" fill="none" stroke="#E6AC00" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
-                         <!-- Tentacles Right -->
-                        <path d="M80 50 Q90 60 85 70 Q80 80 90 85" fill="none" stroke="#FFD700" stroke-width="8" stroke-linecap="round"/>
-                        <path d="M80 50 Q90 60 85 70 Q80 80 90 85" fill="none" stroke="#E6AC00" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
-                        <path d="M70 60 Q75 75 65 85" fill="none" stroke="#FFD700" stroke-width="8" stroke-linecap="round"/>
-                        <path d="M70 60 Q75 75 65 85" fill="none" stroke="#E6AC00" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
-                         <!-- Tentacles Center -->
-                        <path d="M42 65 Q40 80 45 88" fill="none" stroke="#FFD700" stroke-width="7" stroke-linecap="round"/>
-                        <path d="M58 65 Q60 80 55 88" fill="none" stroke="#FFD700" stroke-width="7" stroke-linecap="round"/>
-                        <!-- Face -->
-                        <circle cx="40" cy="45" r="3" fill="#333"/> <!-- Eye L -->
-                        <circle cx="60" cy="45" r="3" fill="#333"/> <!-- Eye R -->
-                        <path d="M42 55 Q50 62 58 55" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round"/> <!-- Smile -->
-                        <!-- Highlight -->
-                        <ellipse cx="35" cy="30" rx="5" ry="3" fill="white" opacity="0.4"/>
-                    </svg>
+                   <svg viewBox="0 0 100 100" class="w-full h-full" xmlns="http://www.w3.org/2000/svg"><path d="M50 15 C30 15 15 30 15 50 C15 65 25 75 30 75 C35 75 35 65 30 60 C25 55 25 45 30 40 C35 35 65 35 70 40 C75 45 75 55 70 60 C65 65 65 75 70 75 C75 75 85 65 85 50 C85 30 70 15 50 15 Z" fill="#FFD700" stroke="#E6AC00" stroke-width="2"/><path d="M20 50 Q10 60 15 70 Q20 80 10 85" fill="none" stroke="#FFD700" stroke-width="8" stroke-linecap="round"/><path d="M20 50 Q10 60 15 70 Q20 80 10 85" fill="none" stroke="#E6AC00" stroke-width="2" stroke-linecap="round" opacity="0.5"/><path d="M30 60 Q25 75 35 85" fill="none" stroke="#FFD700" stroke-width="8" stroke-linecap="round"/><path d="M30 60 Q25 75 35 85" fill="none" stroke="#E6AC00" stroke-width="2" stroke-linecap="round" opacity="0.5"/><path d="M80 50 Q90 60 85 70 Q80 80 90 85" fill="none" stroke="#FFD700" stroke-width="8" stroke-linecap="round"/><path d="M80 50 Q90 60 85 70 Q80 80 90 85" fill="none" stroke="#E6AC00" stroke-width="2" stroke-linecap="round" opacity="0.5"/><path d="M70 60 Q75 75 65 85" fill="none" stroke="#FFD700" stroke-width="8" stroke-linecap="round"/><path d="M70 60 Q75 75 65 85" fill="none" stroke="#E6AC00" stroke-width="2" stroke-linecap="round" opacity="0.5"/><path d="M42 65 Q40 80 45 88" fill="none" stroke="#FFD700" stroke-width="7" stroke-linecap="round"/><path d="M58 65 Q60 80 55 88" fill="none" stroke="#FFD700" stroke-width="7" stroke-linecap="round"/><circle cx="40" cy="45" r="3" fill="#333"/><circle cx="60" cy="45" r="3" fill="#333"/><path d="M42 55 Q50 62 58 55" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round"/><ellipse cx="35" cy="30" rx="5" ry="3" fill="white" opacity="0.4"/></svg>
                 </div>
             </div>
-
-            <!-- Meta Bar -->
             <div class="flex flex-col md:flex-row justify-between items-center border-b border-black py-1 text-xs font-sans-condensed uppercase tracking-widest">
-                <div class="md:w-1/3"></div> <!-- Removed Year/Number -->
+                <div class="md:w-1/3 text-gray-500">Analisi Psicopolitica del Presente</div>
                 <div class="md:w-1/3 text-center font-bold text-sm">DIRETTORE IL POLPO DELLA DOMENICA</div>
-                <div class="md:w-1/3 text-right">Martedì 9 Dicembre 2025 - € 1,80</div>
+                <div class="md:w-1/3 text-right">Martedì 16 Dicembre 2025</div>
             </div>
         </header>
 
-        <!-- TOP EDITORIAL (Deck) -->
+        <!-- CONTENT 16 DEC -->
         <section class="mb-8 border-b border-gray-300 pb-6">
-            <h2 class="font-headline font-bold text-2xl md:text-3xl text-blue-900 mb-2 leading-tight">
-                Potere, Narrazione e Nostalgia: Anatomia del Mondo Nuovo
-            </h2>
-            <h3 class="font-sans-condensed font-bold text-lg text-gray-600 mb-4">
-                Tre vicende apparentemente slegate offrono una prospettiva prismatica sul potere contemporaneo: David Ellison, lo scandalo NATO-Elbit e l'elegia di Stenio Solinas.
-            </h3>
+            <h2 class="font-headline font-bold text-2xl md:text-3xl text-blue-900 mb-2 leading-tight">Il masochismo delle democrazie</h2>
+            <h3 class="font-sans-condensed font-bold text-lg text-gray-600 mb-4">La superficie degli eventi non basta. Serve una diagnosi radicale: il "farsi male" come copione inconscio.</h3>
             <div class="font-body text-sm md:text-base leading-snug text-justify-news text-gray-800 columns-1 md:columns-3 gap-8">
-                <p class="first-letter-drop mb-4">
-                    Per comprendere la natura del potere nel mondo contemporaneo, è necessario osservarlo attraverso lenti diverse, capaci di coglierne le manifestazioni più sofisticate, quelle più brute e quelle culturali. La metodica scalata ai media globali di David Ellison per "cambiare la narrativa su Israele"; lo scandalo di corruzione che travolge un'agenzia chiave della NATO e coinvolge il colosso israeliano della difesa Elbit; infine, la riflessione malinconica di Stenio Solinas nel suo libro <em>Supervagamondo</em>, un'elegia per un'epoca di stile e identità ormai perduta.
-                </p>
-                <p class="mb-4">
-                    La tesi di fondo è che tali vicende non si limitino a rivelare le meccaniche del potere contemporaneo, ma ne costituiscano l'architettura operativa: un circuito integrato in cui il controllo della narrazione abilita e normalizza la corruzione sistemica, la quale a sua volta prolifera nel vuoto valoriale e identitario diagnosticato dalla critica culturale. È un potere post-ideologico che agisce sulla percezione, sul profitto e sul disorientamento psicologico.
-                </p>
-                <p>
-                    Questo saggio si propone di analizzare ciascuna di queste dinamiche. Inizieremo con gli architetti della percezione, esplorando l'impero mediatico degli Ellison. Proseguiremo esaminando gli ingranaggi materiali della macchina bellica, dove lo scandalo NATO-Elbit svela la corruzione come sistema. Infine, ci immergeremo nel disincanto culturale descritto da Solinas, per comprendere il vuoto strategico che questo nuovo ordine sfrutta, prima di giungere a una sintesi che intrecci questi fili in un ritratto coerente del nostro tempo.
-                </p>
+                <p class="first-letter-drop mb-4">La superficie degli eventi politici e culturali contemporanei non è più sufficiente a spiegare la nostra epoca. Per comprendere la vertigine che ci attrae verso l'autoritarismo, la fascinazione per il dolore e la ripetizione dei nostri stessi errori, dobbiamo osare una diagnosi più radicale, che affonda le sue radici nella psiche.</p>
+                <p class="mb-4">Come esplorato nel saggio di Vittorio Lingiardi, la ricerca di esperienze dolorose non è legata semplicemente al piacere derivato dal dolore, ma a dinamiche di attaccamento che ripetono schemi traumatici infantili. È un impulso a ricreare relazioni che fanno male perché rappresentano l'unica "lingua" che conosciamo per sentirci connessi.</p>
+                <p>È un paradosso che Andrew Sean Greer ha condensato in una frase: «Non so che cosa unisca le parti dell’atomo, ma a legare gli esseri umani sembra sia il dolore». Questo filo rosso attraversa territori apparentemente distanti: dalla politica alla cronaca, dall'arte al cinema.</p>
             </div>
         </section>
 
-        <!-- MAIN GRID LAYOUT -->
         <main class="grid grid-cols-1 lg:grid-cols-5 gap-0">
-            
-            <!-- COLUMN 1: Ellison -->
+            <!-- COL 1 -->
             <article class="lg:col-span-1 separator-r">
-                <h3 class="font-headline font-bold text-xl mb-2 leading-tight text-red-800">Architetti della Percezione</h3>
-                <h4 class="font-sans-condensed font-bold text-sm mb-4 leading-snug">La Nuova Propaganda nell'Era Ellison: modellare il pianeta senza che se ne accorga.</h4>
-                
+                <h3 class="font-headline font-bold text-xl mb-2 leading-tight text-red-800">I Predatori al Potere</h3>
+                <h4 class="font-sans-condensed font-bold text-sm mb-4 leading-snug">Il Paradosso di una Società che si Sceglie i Propri Tiranni e fugge dalla libertà.</h4>
                 <div class="font-body text-xs leading-relaxed text-justify-news">
-                    <p class="mb-3"><span class="font-bold uppercase">Media.</span> Nel XXI secolo, la più potente forma di influenza geopolitica non si esercita più soltanto con gli eserciti, ma con il controllo strategico della narrazione. Il dominio sull'immaginario collettivo, sugli algoritmi che lo plasmano e sulle infrastrutture che lo veicolano è il vero campo di battaglia per il potere. Nessuno sembra averlo compreso meglio della dinastia Ellison.</p>
-                    <p class="mb-3">La loro strategia non si basa sulla censura tradizionale, ma su un controllo totalizzante. L'acquisizione di Paramount, l'assalto a Warner Bros. e la presa di controllo su TikTok USA non sono semplici operazioni finanziarie, ma la costruzione di un ecosistema integrato. L'obiettivo dichiarato, di una chiarezza disarmante, è quello di "cambiare la narrativa su Israele". Questa architettura del consenso opera in sinergia con il potere politico, come dimostra il legame con il "Tony Blair Institute for Global Change".</p>
+                    <p class="mb-3"><span class="font-bold uppercase">Politica.</span> L'ascesa contemporanea di leader autoritari è un fenomeno che le sole analisi politologiche faticano a spiegare. Esiste una dimensione psicologica: una forma di "masochismo politico". Donald Trump rappresenta l'archetipo perfetto del leader "predatore".</p>
+                    <p class="mb-3">Affidandosi a un leader che promette di risolvere ogni problema, il cittadino ottiene in cambio una "nuova sicurezza". Più ci si sottomette, paradossalmente, più ci si immagina liberi. La scelta di leader come Trump non è dunque un semplice errore, ma l'espressione di un bisogno psicologico profondo: un padre-padrone che protegga e punisca.</p>
                 </div>
             </article>
+            <!-- COL 2 -->
+            <article class="lg:col-span-1 separator-r flex flex-col">
+                <div class="mb-4">
+                    <h3 class="font-headline font-bold text-xl mb-1">Coazione a Ripetere</h3>
+                    <h4 class="font-sans-condensed text-xs mb-2 text-gray-600">Dal Delitto Reiner al Trauma Collettivo</h4>
+                    <p class="font-body text-xs leading-relaxed text-justify-news">
+                        <span class="font-bold uppercase">Cronaca.</span> La notizia della morte del regista Rob Reiner per mano del figlio è più di una tragedia familiare. Siamo di fronte al sintomo di una patologia relazionale più ampia, quella che Freud definì "coazione a ripetere".
+                    </p>
+                </div>
+                <div class="my-4 border border-gray-800 p-2 bg-gray-100 text-center relative">
+                    <svg viewBox="0 0 200 150" class="w-full h-auto opacity-80" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="10" y="10" width="180" height="130" stroke="black" fill="white"/>
+                        <path d="M50 140 L50 60" stroke-width="3"/> <circle cx="50" cy="40" r="15" /> 
+                        <line x1="50" y1="80" x2="30" y2="100" /> <line x1="50" y1="80" x2="70" y2="90" />
+                        <rect x="120" y="30" width="50" height="80" stroke-width="2" />
+                        <path d="M120 30 L170 110" stroke-width="1" /> <path d="M170 30 L120 110" stroke-width="1" />
+                        <path d="M60 30 L90 20 L100 40 Z" fill="black" stroke="none" class="opacity-10"/>
+                    </svg>
+                    <p class="font-handwriting text-xs mt-1 font-bold font-sans italic text-gray-500">"VOGLIO SOLO IL VECCHIO DOLORE."</p>
+                </div>
+            </article>
+            <!-- COL 3 -->
+            <article class="lg:col-span-1 separator-r">
+                <h3 class="font-headline font-bold text-xl mb-1">Anatomia di una Ferita</h3>
+                <h4 class="font-sans-condensed text-xs mb-2 text-gray-600">"Niente è Paragonabile a Te" e il fantasma materno.</h4>
+                <div class="font-body text-xs leading-relaxed text-justify-news">
+                    <p class="mb-3"><span class="font-bold uppercase">Musica.</span> "Nothing compares 2 U", nell'interpretazione di Sinéad O'Connor, è un'icona culturale. L'analisi psicoanalitica svela una verità nascosta: l'invocazione "mama" rivela che la vera destinataria non è un amante perduto, ma la madre.</p>
+                    <p class="mb-3">Il verso aggiunto, "Tutti i fiori... sono morti quando te ne sei andata", trasforma la perdita in una catastrofe cosmica, un'eco insopportabile del trauma originario che si proietta su ogni nuova relazione.</p>
+                </div>
+            </article>
+            <!-- COL 4/5 -->
+            <div class="lg:col-span-2 flex flex-col md:flex-row gap-4">
+                <article class="flex-1 separator-r md:border-r-0 md:pr-0">
+                    <h3 class="font-headline font-bold text-lg mb-1 text-blue-800">Lo Schermo del Dolore</h3>
+                    <h4 class="font-sans-condensed text-xs mb-2">Quando il cinema mette in scena l'arte di farsi male.</h4>
+                    <p class="font-body text-xs leading-relaxed text-justify-news mb-2">Il cinema di <strong>Lars von Trier</strong> è un viaggio nel martirio femminile: le sue protagoniste si immolano in un "masochismo assoluto" per ciò che amano.</p>
+                    <p class="font-body text-xs leading-relaxed text-justify-news">In <strong>Fassbinder</strong>, il melodramma relazionale mostra con lucidità come "la vittima cerca il carnefice, lo invoca, lo costruisce".</p>
+                </article>
+                <article class="flex-1">
+                    <h3 class="font-headline font-bold text-lg mb-1">Vocazione Distruttiva</h3>
+                    <h4 class="font-sans-condensed text-xs mb-2">Scorsese e il pugilato come metafora di vita.</h4>
+                    <div class="font-body text-xs leading-relaxed text-justify-news bg-gray-100 p-2 border border-gray-300">
+                        <p class="mb-2">In <em>Toro scatenato</em>, Jake LaMotta è un uomo diviso tra onnipotenza e masochismo. L'apice è il "massacro di San Valentino", quando sibila al suo avversario: "Non sono andato giù Ray".</p>
+                    </div>
+                </article>
+            </div>
+        </main>
 
-            <!-- COLUMN 2: NATO/Elbit + Cartoon -->
+        <hr class="border-t-2 border-black my-6">
+
+        <section class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+            <div class="lg:col-span-3">
+                <h2 class="font-masthead font-bold text-4xl mb-2">La Gabbia Invisibile</h2>
+                <h3 class="font-sans-condensed font-bold text-lg text-gray-700 mb-4">Il "sabotatore interno" che guida le nostre scelte e boicotta la nostra felicità.</h3>
+                <div class="font-body text-sm leading-snug text-justify-news columns-1 md:columns-3 gap-6">
+                    <p class="mb-3 first-letter-drop">Se guardiamo alla politica, alla società e alla cultura contemporanee, emerge un filo rosso inequivocabile: una tendenza psicologica profonda ci spinge a ripetere schemi dolorosi. È come se fossimo guidati da un "sabotatore interno".</p>
+                    <p class="mb-3">Il concetto di "sabotatore interno" affonda le sue radici nelle teorie di Fairbairn e Winnicott. Un'infanzia segnata da un mancato riconoscimento porta alla costruzione di un "falso Sé". Questa dinamica ci porta a scegliere partner che ci fanno male o leader autoritari.</p>
+                    <p class="mb-3">Siamo dunque condannati? La psicoanalisi offre una via d'uscita: non negare il dolore, ma riconoscerlo. Comprendere l'origine del nostro sabotatore interno è il primo passo per disinnescarlo.</p>
+                </div>
+            </div>
+            <div class="lg:col-span-1 border-l pl-4 border-gray-300">
+                <div class="mb-4">
+                    <h3 class="font-masthead font-bold italic text-2xl border-b border-black pb-1 mb-2">Polpo's Version</h3>
+                    <div class="float-left w-16 h-16 mr-3 border border-gray-400 p-1 bg-white mb-2">
+                        <svg viewBox="0 0 100 100" class="w-full h-full" xmlns="http://www.w3.org/2000/svg"><path d="M50 15 C30 15 15 30 15 50 C15 65 25 75 30 75 C35 75 35 65 30 60 C25 55 25 45 30 40 C35 35 65 35 70 40 C75 45 75 55 70 60 C65 65 65 75 70 75 C75 75 85 65 85 50 C85 30 70 15 50 15 Z" fill="#999" stroke="#666" stroke-width="2"/><path d="M20 50 Q10 60 15 70 Q20 80 10 85" fill="none" stroke="#999" stroke-width="8" stroke-linecap="round"/><path d="M80 50 Q90 60 85 70 Q80 80 90 85" fill="none" stroke="#999" stroke-width="8" stroke-linecap="round"/><circle cx="40" cy="45" r="3" fill="#333"/><circle cx="60" cy="45" r="3" fill="#333"/><path d="M42 55 Q50 62 58 55" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round"/></svg>
+                    </div>
+                    <p class="font-body text-xs text-justify-news"><span class="font-bold drop-cap text-3xl float-left mr-1">F</span>orse tutti i draghi della nostra vita sono principesse, che attendono solo di vederci un giorno belli e coraggiosi. I mostri non vanno uccisi, ma riconosciuti.</p>
+                </div>
+                <div class="bg-blue-100 p-3 mt-4 text-center border border-blue-200">
+                    <h5 class="font-sans-condensed font-bold text-blue-800 uppercase text-xs mb-1">La Citazione</h5>
+                    <p class="font-serif text-xs italic leading-tight">"Non so che cosa unisca le parti dell’atomo, ma a legare gli esseri umani sembra sia il dolore."</p>
+                    <p class="text-[10px] mt-1 font-bold uppercase">Andrew Sean Greer</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Clean Footer -->
+        <footer class="mt-8 border-t border-gray-400 pt-2 text-center">
+            <p class="text-[10px] font-sans text-gray-500 uppercase"></p>
+        </footer>
+    </div>
+
+    <!-- WRAPPER FOR EDITION 09 DEC (HIDDEN) -->
+    <div id="edition-09-dic" class="hidden-edition max-w-[1400px] mx-auto bg-white shadow-xl p-4 md:p-8 border-t-4 border-red-700">
+        <!-- HEADER 09 DEC -->
+        <header class="mb-6">
+            <div class="flex flex-col md:flex-row justify-between items-center border-b-2 border-black pb-4 mb-2">
+                 <!-- Left Polpo -->
+                 <div class="hidden md:flex w-32 h-24 items-center justify-center p-1">
+                    <svg viewBox="0 0 100 100" class="w-full h-full" xmlns="http://www.w3.org/2000/svg"><path d="M50 15 C30 15 15 30 15 50 C15 65 25 75 30 75 C35 75 35 65 30 60 C25 55 25 45 30 40 C35 35 65 35 70 40 C75 45 75 55 70 60 C65 65 65 75 70 75 C75 75 85 65 85 50 C85 30 70 15 50 15 Z" fill="#FFD700" stroke="#E6AC00" stroke-width="2"/><path d="M20 50 Q10 60 15 70 Q20 80 10 85" fill="none" stroke="#FFD700" stroke-width="8" stroke-linecap="round"/><path d="M20 50 Q10 60 15 70 Q20 80 10 85" fill="none" stroke="#E6AC00" stroke-width="2" stroke-linecap="round" opacity="0.5"/><path d="M30 60 Q25 75 35 85" fill="none" stroke="#FFD700" stroke-width="8" stroke-linecap="round"/><path d="M30 60 Q25 75 35 85" fill="none" stroke="#E6AC00" stroke-width="2" stroke-linecap="round" opacity="0.5"/><path d="M80 50 Q90 60 85 70 Q80 80 90 85" fill="none" stroke="#FFD700" stroke-width="8" stroke-linecap="round"/><path d="M80 50 Q90 60 85 70 Q80 80 90 85" fill="none" stroke="#E6AC00" stroke-width="2" stroke-linecap="round" opacity="0.5"/><path d="M70 60 Q75 75 65 85" fill="none" stroke="#FFD700" stroke-width="8" stroke-linecap="round"/><path d="M70 60 Q75 75 65 85" fill="none" stroke="#E6AC00" stroke-width="2" stroke-linecap="round" opacity="0.5"/><path d="M42 65 Q40 80 45 88" fill="none" stroke="#FFD700" stroke-width="7" stroke-linecap="round"/><path d="M58 65 Q60 80 55 88" fill="none" stroke="#FFD700" stroke-width="7" stroke-linecap="round"/><circle cx="40" cy="45" r="3" fill="#333"/><circle cx="60" cy="45" r="3" fill="#333"/><path d="M42 55 Q50 62 58 55" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round"/><ellipse cx="35" cy="30" rx="5" ry="3" fill="white" opacity="0.4"/></svg>
+                 </div>
+                 <!-- Title -->
+                 <div class="flex-1 text-center px-4">
+                     <h1 class="font-masthead font-black text-6xl md:text-9xl tracking-tighter leading-none transform scale-y-110">IL POLPULISTA</h1>
+                     <div class="relative -mt-2 mb-2">
+                        <!-- Removed "quotidiano" text -->
+                        <div class="absolute top-1/2 left-0 w-full h-px bg-black -z-0"></div>
+                     </div>
+                 </div>
+                 <!-- Right Polpo -->
+                 <div class="hidden md:flex w-32 h-24 items-center justify-center p-1">
+                    <svg viewBox="0 0 100 100" class="w-full h-full" xmlns="http://www.w3.org/2000/svg"><path d="M50 15 C30 15 15 30 15 50 C15 65 25 75 30 75 C35 75 35 65 30 60 C25 55 25 45 30 40 C35 35 65 35 70 40 C75 45 75 55 70 60 C65 65 65 75 70 75 C75 75 85 65 85 50 C85 30 70 15 50 15 Z" fill="#FFD700" stroke="#E6AC00" stroke-width="2"/><path d="M20 50 Q10 60 15 70 Q20 80 10 85" fill="none" stroke="#FFD700" stroke-width="8" stroke-linecap="round"/><path d="M20 50 Q10 60 15 70 Q20 80 10 85" fill="none" stroke="#E6AC00" stroke-width="2" stroke-linecap="round" opacity="0.5"/><path d="M30 60 Q25 75 35 85" fill="none" stroke="#FFD700" stroke-width="8" stroke-linecap="round"/><path d="M30 60 Q25 75 35 85" fill="none" stroke="#E6AC00" stroke-width="2" stroke-linecap="round" opacity="0.5"/><path d="M80 50 Q90 60 85 70 Q80 80 90 85" fill="none" stroke="#FFD700" stroke-width="8" stroke-linecap="round"/><path d="M80 50 Q90 60 85 70 Q80 80 90 85" fill="none" stroke="#E6AC00" stroke-width="2" stroke-linecap="round" opacity="0.5"/><path d="M70 60 Q75 75 65 85" fill="none" stroke="#FFD700" stroke-width="8" stroke-linecap="round"/><path d="M70 60 Q75 75 65 85" fill="none" stroke="#E6AC00" stroke-width="2" stroke-linecap="round" opacity="0.5"/><path d="M42 65 Q40 80 45 88" fill="none" stroke="#FFD700" stroke-width="7" stroke-linecap="round"/><path d="M58 65 Q60 80 55 88" fill="none" stroke="#FFD700" stroke-width="7" stroke-linecap="round"/><circle cx="40" cy="45" r="3" fill="#333"/><circle cx="60" cy="45" r="3" fill="#333"/><path d="M42 55 Q50 62 58 55" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round"/><ellipse cx="35" cy="30" rx="5" ry="3" fill="white" opacity="0.4"/></svg>
+                 </div>
+            </div>
+            <div class="flex flex-col md:flex-row justify-between items-center border-b border-black py-1 text-xs font-sans-condensed uppercase tracking-widest">
+                <div class="md:w-1/3">Anatomia del Mondo Nuovo</div>
+                <div class="md:w-1/3 text-center font-bold text-sm">DIRETTORE IL POLPO DELLA DOMENICA</div>
+                <!-- Removed Price -->
+                <div class="md:w-1/3 text-right">Martedì 9 Dicembre 2025</div>
+            </div>
+        </header>
+
+        <!-- CONTENT 09 DEC -->
+        <section class="mb-8 border-b border-gray-300 pb-6">
+            <h2 class="font-headline font-bold text-2xl md:text-3xl text-blue-900 mb-2 leading-tight">Potere, Narrazione e Nostalgia: Anatomia del Mondo Nuovo</h2>
+            <h3 class="font-sans-condensed font-bold text-lg text-gray-600 mb-4">Tre vicende apparentemente slegate offrono una prospettiva prismatica sul potere contemporaneo.</h3>
+            <div class="font-body text-sm md:text-base leading-snug text-justify-news text-gray-800 columns-1 md:columns-3 gap-8">
+                <p class="first-letter-drop mb-4">Per comprendere la natura del potere nel mondo contemporaneo, è necessario osservarlo attraverso lenti diverse, capaci di coglierne le manifestazioni più sofisticate. La metodica scalata ai media globali di David Ellison, lo scandalo di corruzione NATO, e la riflessione malinconica di Stenio Solinas.</p>
+                <p class="mb-4">La tesi di fondo è che tali vicende costituiscano l'architettura operativa del potere: un circuito integrato in cui il controllo della narrazione abilita e normalizza la corruzione sistemica. È un potere post-ideologico che agisce sulla percezione e sul profitto.</p>
+                <p>Questo saggio si propone di analizzare ciascuna di queste dinamiche. Inizieremo con gli architetti della percezione, proseguiremo con gli ingranaggi della macchina bellica, e infine ci immergeremo nel disincanto culturale.</p>
+            </div>
+        </section>
+
+        <main class="grid grid-cols-1 lg:grid-cols-5 gap-0">
+             <!-- COL 1 -->
+             <article class="lg:col-span-1 separator-r">
+                <h3 class="font-headline font-bold text-xl mb-2 leading-tight text-red-800">Architetti della Percezione</h3>
+                <h4 class="font-sans-condensed font-bold text-sm mb-4 leading-snug">La Nuova Propaganda nell'Era Ellison: modellare il pianeta senza che se ne accorga.</h4>
+                <div class="font-body text-xs leading-relaxed text-justify-news">
+                    <p class="mb-3"><span class="font-bold uppercase">Media.</span> Nel XXI secolo, la più potente forma di influenza geopolitica è il controllo strategico della narrazione. Nessuno sembra averlo compreso meglio della dinastia Ellison. La loro strategia non si basa sulla censura, ma su un controllo totalizzante.</p>
+                    <p class="mb-3">L'acquisizione di Paramount e l'assalto a Warner Bros. non sono semplici operazioni finanziarie, ma la costruzione di un ecosistema integrato. L'obiettivo dichiarato è quello di "cambiare la narrativa su Israele".</p>
+                </div>
+            </article>
+            <!-- COL 2 -->
             <article class="lg:col-span-1 separator-r flex flex-col">
                 <div class="mb-4">
                     <h3 class="font-headline font-bold text-xl mb-1">La Macchina Bellica</h3>
                     <h4 class="font-sans-condensed text-xs mb-2 text-gray-600">Corruzione come Sistema alla NATO: lo scandalo NSPA</h4>
                     <p class="font-body text-xs leading-relaxed text-justify-news">
-                        <span class="font-bold uppercase">Bruxelles.</span> La narrazione immacolata, elaborata nelle stanze del potere della Silicon Valley, trova il suo sordido corrispettivo materiale nelle transazioni opache del commercio globale di armi. L'invasione russa dell'Ucraina ha innescato un aumento esponenziale delle spese militari, creando un terreno fertile per la corruzione sistemica, come dimostra lo scandalo che ha travolto la NSPA (Nato Support and Procurement Agency).
+                        <span class="font-bold uppercase">Bruxelles.</span> La narrazione immacolata trova il suo sordido corrispettivo materiale nelle transazioni opache del commercio globale di armi. L'invasione russa dell'Ucraina ha creato un terreno fertile per la corruzione, come dimostra lo scandalo NSPA.
                     </p>
                 </div>
-
-                <!-- CARTOON PLACEHOLDER -->
                 <div class="my-4 border border-gray-800 p-2 bg-gray-100 text-center relative">
                     <svg viewBox="0 0 200 150" class="w-full h-auto opacity-80" fill="none" stroke="currentColor" stroke-width="2">
                         <rect x="10" y="10" width="180" height="130" stroke="black" fill="white"/>
-                        <!-- Updated cartoon content: A figure painting over a tank -->
-                        <path d="M40 100 L160 100 L150 70 L50 70 Z" /> <!-- Tank body -->
-                        <rect x="80" y="50" width="40" height="20" /> <!-- Turret -->
-                        <line x1="120" y1="60" x2="170" y2="50" stroke-width="4" /> <!-- Barrel -->
-                        
-                        <!-- Painter Figure -->
+                        <path d="M40 100 L160 100 L150 70 L50 70 Z" /> <rect x="80" y="50" width="40" height="20" /> <line x1="120" y1="60" x2="170" y2="50" stroke-width="4" />
                         <circle cx="50" cy="90" r="10" fill="white" stroke="black"/> 
-                        <line x1="50" y1="100" x2="50" y2="120" />
-                        <line x1="50" y1="110" x2="70" y2="100" /> <!-- Arm holding brush -->
-                        <line x1="70" y1="100" x2="90" y2="80" /> <!-- Brush handle -->
-                        
-                        <!-- Bubble -->
+                        <line x1="50" y1="100" x2="50" y2="120" /> <line x1="50" y1="110" x2="70" y2="100" /> <line x1="70" y1="100" x2="90" y2="80" />
                         <path d="M60 40 L90 20 L100 40 Z" fill="black" stroke="none" class="opacity-10"/>
                     </svg>
-                    <p class="font-handwriting text-xs mt-1 font-bold font-sans italic text-gray-500">
-                        "UN ATTIMO, STO RIDIPINGENDO LA REALTÀ."
-                    </p>
+                    <p class="font-handwriting text-xs mt-1 font-bold font-sans italic text-gray-500">"UN ATTIMO, STO RIDIPINGENDO LA REALTÀ."</p>
                 </div>
             </article>
-
-            <!-- COLUMN 3: Solinas -->
+            <!-- COL 3 -->
             <article class="lg:col-span-1 separator-r">
                 <h3 class="font-headline font-bold text-xl mb-1">Un Mondo Perduto</h3>
                 <h4 class="font-sans-condensed text-xs mb-2 text-gray-600">L'Elegia Culturale di "Supervagamondo" e il vuoto strategico</h4>
                 <div class="font-body text-xs leading-relaxed text-justify-news">
-                    <p class="mb-3"><span class="font-bold uppercase">Cultura.</span> Se le operazioni di Ellison e lo scandalo NATO descrivono come il potere opera, il libro <em>Supervagamondo</em> di Stenio Solinas offre una chiave di lettura culturale per capire perché questo potere trovi un terreno così fertile. La nostalgia per "il mondo di ieri" che pervade il saggio non è una semplice fuga dal presente, ma un sintomo diagnostico del collasso di un immaginario collettivo.</p>
-                    <p class="mb-3">La critica di Solinas si articola in un netto contrasto tra un passato idealizzato e un presente percepito come degradato ("logica del brutto"). Il vuoto culturale che Solinas lamenta non è un mero sfondo, ma una vulnerabilità strategica. Un'opinione pubblica disorientata e orfana di un'identità condivisa è un corpo sociale demotivato, privo degli anticorpi critici necessari per decifrare i meccanismi di controllo.</p>
+                    <p class="mb-3"><span class="font-bold uppercase">Cultura.</span> Il libro <em>Supervagamondo</em> di Stenio Solinas offre una chiave di lettura culturale. La nostalgia per "il mondo di ieri" è un sintomo diagnostico del collasso di un immaginario collettivo.</p>
+                    <p class="mb-3">La critica di Solinas si articola in un contrasto tra un passato idealizzato e un presente percepito come degradato. Il vuoto culturale che lamenta è una vulnerabilità strategica che ci priva degli anticorpi critici.</p>
                 </div>
             </article>
-
-            <!-- COLUMN 4 & 5: Detail Boxes (Fact Checking) -->
+            <!-- COL 4/5 -->
             <div class="lg:col-span-2 flex flex-col md:flex-row gap-4">
-                
-                <!-- Sub Col 1: Ellison Details -->
                 <article class="flex-1 separator-r md:border-r-0 md:pr-0">
                     <h3 class="font-headline font-bold text-lg mb-1 text-blue-800">Il Piano Ellison</h3>
-                    <h4 class="font-sans-condensed text-xs mb-2">Le manovre per rimodellare la percezione pubblica "sulla nuvola".</h4>
+                    <h4 class="font-sans-condensed text-xs mb-2">Le manovre per rimodellare la percezione pubblica.</h4>
                     <ul class="font-body text-xs leading-relaxed list-disc pl-4 space-y-2">
-                        <li><strong>Warner Bros:</strong> Un'offerta da 108 miliardi di dollari per l'intero gruppo, inclusa la CNN.</li>
-                        <li><strong>CBS News:</strong> Attraverso Paramount, insediamento della "commentatrice sionista Bari Weiss" come top editor.</li>
-                        <li><strong>TikTok:</strong> Il sospetto "assai fondato" di una revisione silenziosa dell'algoritmo più influente del mondo.</li>
+                        <li><strong>Warner Bros:</strong> Un'offerta da 108 miliardi di dollari per l'intero gruppo.</li>
+                        <li><strong>CBS News:</strong> Insediamento della "commentatrice sionista Bari Weiss" come top editor.</li>
+                        <li><strong>TikTok:</strong> Sospetto di revisione dell'algoritmo.</li>
                     </ul>
                 </article>
-
-                <!-- Sub Col 2: NATO Scandal Details -->
                 <article class="flex-1">
                     <h3 class="font-headline font-bold text-lg mb-1">Lo Scandalo NSPA</h3>
-                    <h4 class="font-sans-condensed text-xs mb-2">Il meccanismo oliato scoperchiato dalla Procura federale del Belgio.</h4>
+                    <h4 class="font-sans-condensed text-xs mb-2">Il meccanismo oliato scoperchiato dalla Procura belga.</h4>
                     <div class="font-body text-xs leading-relaxed text-justify-news bg-gray-100 p-2 border border-gray-300">
-                        <p class="mb-1"><strong>L'ENTE:</strong> NSPA, contratti "quasi triplicati dal 2021", valore stimato 9,5 mld di euro.</p>
-                        <p class="mb-1"><strong>L'AZIENDA:</strong> Elbit Systems, colosso israeliano che "testa le sue armi a Gaza".</p>
-                        <p class="mb-1"><strong>L'UOMO CHIAVE:</strong> Eliau Eluasvili, ricercato per corruzione attiva.</p>
-                        <p><strong>IL MECCANISMO:</strong> Tangenti per 1,9 milioni di euro per "ottenere contratti strategici".</p>
+                        <p class="mb-1"><strong>L'ENTE:</strong> NSPA, contratti "quasi triplicati".</p>
+                        <p class="mb-1"><strong>L'AZIENDA:</strong> Elbit Systems.</p>
+                        <p><strong>IL MECCANISMO:</strong> Tangenti per 1,9 milioni di euro.</p>
                     </div>
                 </article>
             </div>
-
         </main>
 
         <hr class="border-t-2 border-black my-6">
 
-        <!-- BOTTOM SECTION: Conclusion -->
         <section class="grid grid-cols-1 lg:grid-cols-4 gap-6">
-            
-            <!-- Bottom Left Main -->
             <div class="lg:col-span-3">
-                <h2 class="font-masthead font-bold text-4xl mb-2">Conclusione: Intrecciare i Fili di un'Età Disincantata</h2>
-                <h3 class="font-sans-condensed font-bold text-lg text-gray-700 mb-4">Il paradigma di un nuovo potere post-ideologico che non governa più i corpi, ma ingegnerizza il consenso.</h3>
-                
+                <h2 class="font-masthead font-bold text-4xl mb-2">Conclusione: Intrecciare i Fili</h2>
+                <h3 class="font-sans-condensed font-bold text-lg text-gray-700 mb-4">Il paradigma di un nuovo potere post-ideologico che ingegnerizza il consenso.</h3>
                 <div class="font-body text-sm leading-snug text-justify-news columns-1 md:columns-3 gap-6">
-                    <p class="mb-3 first-letter-drop">L'analisi di queste tre istantanee del nostro tempo—il potere che si esercita attraverso il controllo totale della narrazione (Ellison), quello che opera mediante la corruzione strutturale degli apparati militari-industriali (scandalo Elbit/NATO), e la profonda disillusione culturale che ne consegue (Solinas)—rivela il paradigma di un nuovo potere post-ideologico.</p>
-                    <p class="mb-3">Ci troviamo di fronte a un'età in cui le grandi narrazioni del Novecento sono state sostituite da un pragmatismo brutale, dove il profitto, l'influenza e il controllo sono diventati gli unici valori guida. Il potere non ha più bisogno di giustificarsi con un'ideologia; gli basta possedere l'architettura per fabbricare la realtà e gli ingranaggi per trarne profitto. Il disincanto culturale non è un effetto collaterale, ma una condizione operativa che smorza la resistenza. Ciò che è emblematico nel caso NSPA non è tanto la corruzione in sé, quanto la sua integrazione sistemica.</p>
-                    <p class="mb-3">In questo "mondo nuovo", dominato da architetti della percezione e dagli invisibili meccanismi di un potere senza scrupoli, la domanda finale è inevitabile. Quali spazi rimangono per la verità, per l'integrità e per una cultura autentica? Come si può articolare una resistenza di fronte a un potere che non si limita più a governare i corpi, ma aspira a ingegnerizzare il consenso al punto da rendere il dissenso non solo impraticabile, ma persino inconcepibile? La perdita di "bellezza" e "stile" descritta da Solinas si traduce in una perdita di armatura critica.</p>
+                    <p class="mb-3 first-letter-drop">L'analisi di queste tre istantanee del nostro tempo rivela il paradigma di un nuovo potere post-ideologico. Ci troviamo di fronte a un'età in cui le grandi narrazioni sono state sostituite da un pragmatismo brutale.</p>
+                    <p class="mb-3">Il potere non ha più bisogno di giustificarsi con un'ideologia; gli basta possedere l'architettura per fabbricare la realtà. Il disincanto culturale non è un effetto collaterale, ma una condizione operativa.</p>
+                    <p class="mb-3">In questo "mondo nuovo", la domanda finale è inevitabile: quali spazi rimangono per la verità? La perdita di "bellezza" e "stile" si traduce in una perdita di armatura critica.</p>
                 </div>
             </div>
-
-            <!-- Bottom Right Column (Sidebar) -->
             <div class="lg:col-span-1 border-l pl-4 border-gray-300">
                 <div class="mb-4">
                     <h3 class="font-masthead font-bold italic text-2xl border-b border-black pb-1 mb-2">Polpo's Version</h3>
-                    <!-- SVG Small Polpo for Polpo's Version -->
                     <div class="float-left w-16 h-16 mr-3 border border-gray-400 p-1 bg-white mb-2">
-                        <svg viewBox="0 0 100 100" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M50 15 C30 15 15 30 15 50 C15 65 25 75 30 75 C35 75 35 65 30 60 C25 55 25 45 30 40 C35 35 65 35 70 40 C75 45 75 55 70 60 C65 65 65 75 70 75 C75 75 85 65 85 50 C85 30 70 15 50 15 Z" fill="#999" stroke="#666" stroke-width="2"/>
-                            <path d="M20 50 Q10 60 15 70 Q20 80 10 85" fill="none" stroke="#999" stroke-width="8" stroke-linecap="round"/>
-                            <path d="M80 50 Q90 60 85 70 Q80 80 90 85" fill="none" stroke="#999" stroke-width="8" stroke-linecap="round"/>
-                            <circle cx="40" cy="45" r="3" fill="#333"/>
-                            <circle cx="60" cy="45" r="3" fill="#333"/>
-                            <path d="M42 55 Q50 62 58 55" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round"/>
-                        </svg>
+                         <svg viewBox="0 0 100 100" class="w-full h-full" xmlns="http://www.w3.org/2000/svg"><path d="M50 15 C30 15 15 30 15 50 C15 65 25 75 30 75 C35 75 35 65 30 60 C25 55 25 45 30 40 C35 35 65 35 70 40 C75 45 75 55 70 60 C65 65 65 75 70 75 C75 75 85 65 85 50 C85 30 70 15 50 15 Z" fill="#999" stroke="#666" stroke-width="2"/><path d="M20 50 Q10 60 15 70 Q20 80 10 85" fill="none" stroke="#999" stroke-width="8" stroke-linecap="round"/><path d="M80 50 Q90 60 85 70 Q80 80 90 85" fill="none" stroke="#999" stroke-width="8" stroke-linecap="round"/><circle cx="40" cy="45" r="3" fill="#333"/><circle cx="60" cy="45" r="3" fill="#333"/><path d="M42 55 Q50 62 58 55" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round"/></svg>
                     </div>
-                    <p class="font-body text-xs text-justify-news">
-                        <span class="font-bold drop-cap text-3xl float-left mr-1">S</span>e Solinas ha ragione, la "mediocrità delle offerte" e la "logica del brutto" non sono accidenti, ma strumenti. Il vero dandismo oggi forse non sta nel vestire bene, ma nel rifiutare di farsi vestire dalle narrazioni altrui.
-                    </p>
+                    <p class="font-body text-xs text-justify-news"><span class="font-bold drop-cap text-3xl float-left mr-1">S</span>e Solinas ha ragione, la "mediocrità delle offerte" è uno strumento. Il vero dandismo oggi è rifiutare di farsi vestire dalle narrazioni altrui.</p>
                 </div>
-                
                 <div class="bg-blue-100 p-3 mt-4 text-center border border-blue-200">
-                    <h5 class="font-sans-condensed font-bold text-blue-800 uppercase text-xs mb-1">Focus</h5>
-                    <p class="font-serif text-sm italic">Approfondimento su Elbit e Leonardo</p>
-                    <p class="text-xs mt-1 font-bold">A pagina quattro</p>
+                    <h5 class="font-sans-condensed font-bold text-blue-800 uppercase text-xs mb-1">La Citazione</h5>
+                    <p class="font-serif text-xs italic leading-tight">"Il potere non ha più bisogno di giustificarsi con un'ideologia; gli basta possedere l'architettura per fabbricare la realtà."</p>
+                    <p class="text-[10px] mt-1 font-bold uppercase">Anatomia del Mondo Nuovo</p>
                 </div>
             </div>
         </section>
 
-        <!-- FOOTER -->
+        <!-- Clean Footer -->
         <footer class="mt-8 border-t border-gray-400 pt-2 text-center">
-            <p class="text-[10px] font-sans text-gray-500 uppercase">Sped. in Abb. Postale - DL 353/2003 (Conv. in L. 27/02/2004 n.46) art. 1, comma 1, DCB Roma</p>
+            <p class="text-[10px] font-sans text-gray-500 uppercase"></p>
         </footer>
-
     </div>
+
+    <!-- Script for switching editions -->
+    <script>
+        function switchEdition(edition) {
+            const ed16 = document.getElementById('edition-16-dic');
+            const ed09 = document.getElementById('edition-09-dic');
+            const btn16 = document.getElementById('btn-16-dic');
+            const btn09 = document.getElementById('btn-09-dic');
+
+            if (edition === '16-dic') {
+                ed16.classList.remove('hidden-edition');
+                ed09.classList.add('hidden-edition');
+                
+                // Update tabs
+                btn16.classList.add('tab-active');
+                btn16.classList.remove('tab-inactive');
+                btn09.classList.add('tab-inactive');
+                btn09.classList.remove('tab-active');
+            } else {
+                ed16.classList.add('hidden-edition');
+                ed09.classList.remove('hidden-edition');
+
+                // Update tabs
+                btn09.classList.add('tab-active');
+                btn09.classList.remove('tab-inactive');
+                btn16.classList.add('tab-inactive');
+                btn16.classList.remove('tab-active');
+            }
+            // Smooth scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
 </body>
 </html>
