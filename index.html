@@ -76,7 +76,10 @@
     <!-- NAVIGATION MENU -->
     <nav class="max-w-[1400px] mx-auto mb-4 flex flex-col md:flex-row gap-2 items-center justify-between font-sans-condensed">
         <div class="flex gap-2 flex-wrap">
-            <button onclick="switchEdition('17-dic')" id="btn-17-dic" class="tab-active px-4 py-2 border-2 uppercase tracking-widest font-bold text-sm transition-colors shadow-sm">
+            <button onclick="switchEdition('18-dic')" id="btn-18-dic" class="tab-active px-4 py-2 border-2 uppercase tracking-widest font-bold text-sm transition-colors shadow-sm">
+                18 Dicembre 2025
+            </button>
+            <button onclick="switchEdition('17-dic')" id="btn-17-dic" class="tab-inactive px-4 py-2 border-2 uppercase tracking-widest font-bold text-sm transition-colors shadow-sm">
                 17 Dicembre 2025
             </button>
             <button onclick="switchEdition('16-dic')" id="btn-16-dic" class="tab-inactive px-4 py-2 border-2 uppercase tracking-widest font-bold text-sm transition-colors shadow-sm">
@@ -90,9 +93,161 @@
     </nav>
 
     <!-- =========================================
-         EDITION 17 DEC (DEFAULT VISIBLE)
+         EDITION 18 DEC (NEW - DEFAULT VISIBLE)
          ========================================= -->
-    <div id="edition-17-dic" class="max-w-[1400px] mx-auto bg-white shadow-xl p-4 md:p-8 border-t-4 border-red-700">
+    <div id="edition-18-dic" class="max-w-[1400px] mx-auto bg-white shadow-xl p-4 md:p-8 border-t-4 border-red-700">
+        <!-- HEADER 18 DEC -->
+        <header class="mb-6">
+            <div class="flex flex-col md:flex-row justify-between items-center border-b-2 border-black pb-4 mb-2">
+                <!-- Left Polpo -->
+                <div class="hidden md:flex w-32 h-24 items-center justify-center p-1">
+                   <svg viewBox="0 0 100 100" class="w-full h-full" xmlns="http://www.w3.org/2000/svg"><path d="M50 15 C30 15 15 30 15 50 C15 65 25 75 30 75 C35 75 35 65 30 60 C25 55 25 45 30 40 C35 35 65 35 70 40 C75 45 75 55 70 60 C65 65 65 75 70 75 C75 75 85 65 85 50 C85 30 70 15 50 15 Z" fill="#FFD700" stroke="#E6AC00" stroke-width="2"/><path d="M20 50 Q10 60 15 70 Q20 80 10 85" fill="none" stroke="#FFD700" stroke-width="8" stroke-linecap="round"/><path d="M20 50 Q10 60 15 70 Q20 80 10 85" fill="none" stroke="#E6AC00" stroke-width="2" stroke-linecap="round" opacity="0.5"/><path d="M30 60 Q25 75 35 85" fill="none" stroke="#FFD700" stroke-width="8" stroke-linecap="round"/><path d="M30 60 Q25 75 35 85" fill="none" stroke="#E6AC00" stroke-width="2" stroke-linecap="round" opacity="0.5"/><path d="M80 50 Q90 60 85 70 Q80 80 90 85" fill="none" stroke="#FFD700" stroke-width="8" stroke-linecap="round"/><path d="M80 50 Q90 60 85 70 Q80 80 90 85" fill="none" stroke="#E6AC00" stroke-width="2" stroke-linecap="round" opacity="0.5"/><path d="M70 60 Q75 75 65 85" fill="none" stroke="#FFD700" stroke-width="8" stroke-linecap="round"/><path d="M70 60 Q75 75 65 85" fill="none" stroke="#E6AC00" stroke-width="2" stroke-linecap="round" opacity="0.5"/><path d="M42 65 Q40 80 45 88" fill="none" stroke="#FFD700" stroke-width="7" stroke-linecap="round"/><path d="M58 65 Q60 80 55 88" fill="none" stroke="#FFD700" stroke-width="7" stroke-linecap="round"/><circle cx="40" cy="45" r="3" fill="#333"/><circle cx="60" cy="45" r="3" fill="#333"/><path d="M42 55 Q50 62 58 55" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round"/><ellipse cx="35" cy="30" rx="5" ry="3" fill="white" opacity="0.4"/></svg>
+                </div>
+                <!-- Title -->
+                <div class="flex-1 text-center px-4">
+                    <h1 class="font-masthead font-black text-6xl md:text-9xl tracking-tighter leading-none transform scale-y-110">IL POLPULISTA</h1>
+                </div>
+                <!-- Right Polpo -->
+                <div class="hidden md:flex w-32 h-24 items-center justify-center p-1">
+                   <svg viewBox="0 0 100 100" class="w-full h-full" xmlns="http://www.w3.org/2000/svg"><path d="M50 15 C30 15 15 30 15 50 C15 65 25 75 30 75 C35 75 35 65 30 60 C25 55 25 45 30 40 C35 35 65 35 70 40 C75 45 75 55 70 60 C65 65 65 75 70 75 C75 75 85 65 85 50 C85 30 70 15 50 15 Z" fill="#FFD700" stroke="#E6AC00" stroke-width="2"/><path d="M20 50 Q10 60 15 70 Q20 80 10 85" fill="none" stroke="#FFD700" stroke-width="8" stroke-linecap="round"/><path d="M20 50 Q10 60 15 70 Q20 80 10 85" fill="none" stroke="#E6AC00" stroke-width="2" stroke-linecap="round" opacity="0.5"/><path d="M30 60 Q25 75 35 85" fill="none" stroke="#FFD700" stroke-width="8" stroke-linecap="round"/><path d="M30 60 Q25 75 35 85" fill="none" stroke="#E6AC00" stroke-width="2" stroke-linecap="round" opacity="0.5"/><path d="M80 50 Q90 60 85 70 Q80 80 90 85" fill="none" stroke="#FFD700" stroke-width="8" stroke-linecap="round"/><path d="M80 50 Q90 60 85 70 Q80 80 90 85" fill="none" stroke="#E6AC00" stroke-width="2" stroke-linecap="round" opacity="0.5"/><path d="M70 60 Q75 75 65 85" fill="none" stroke="#FFD700" stroke-width="8" stroke-linecap="round"/><path d="M70 60 Q75 75 65 85" fill="none" stroke="#E6AC00" stroke-width="2" stroke-linecap="round" opacity="0.5"/><path d="M42 65 Q40 80 45 88" fill="none" stroke="#FFD700" stroke-width="7" stroke-linecap="round"/><path d="M58 65 Q60 80 55 88" fill="none" stroke="#FFD700" stroke-width="7" stroke-linecap="round"/><circle cx="40" cy="45" r="3" fill="#333"/><circle cx="60" cy="45" r="3" fill="#333"/><path d="M42 55 Q50 62 58 55" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round"/><ellipse cx="35" cy="30" rx="5" ry="3" fill="white" opacity="0.4"/></svg>
+                </div>
+            </div>
+            <div class="flex flex-col md:flex-row justify-between items-center border-b border-black py-1 text-xs font-sans-condensed uppercase tracking-widest">
+                <div class="md:w-1/3 text-gray-500 font-bold">REVENGE POPCORN</div>
+                <div class="md:w-1/3 text-center font-bold text-sm">IL POLPO DELLA DOMENICA</div>
+                <div class="md:w-1/3 text-right">Giovedì 18 Dicembre 2025</div>
+            </div>
+        </header>
+
+        <!-- TOP EDITORIAL 18 DEC -->
+        <section class="mb-8 border-b border-gray-300 pb-6">
+            <h2 class="font-headline font-bold text-2xl md:text-3xl text-blue-900 mb-2 leading-tight">Miss Finlandia inguaia la Finlandia</h2>
+            <h3 class="font-sans-condensed font-bold text-lg text-gray-600 mb-4">Anatomia di una crisi di Soft Power: da un post su Instagram a uno scandalo diplomatico.</h3>
+            <div class="font-body text-sm md:text-base leading-snug text-justify-news text-gray-800 columns-1 md:columns-3 gap-8">
+                <p class="first-letter-drop mb-4">Il Soft Power è una delle risorse più preziose di una nazione, ma anche la più vulnerabile. L'incidente che ha coinvolto la neo-eletta Miss Finlandia ne è un esempio da manuale. Tutto è partito da una foto pubblicata sui social media: un gesto stereotipato sugli occhi e la didascalia "A cena con un cinese". La combinazione è stata esplosiva.</p>
+                <p class="mb-4">Ciò che ha trasformato l'errore in crisi è stato il fallimento comunicativo. La prima giustificazione del "mal di testa" è stata ritenuta incredibile. Poi, la stoccata finale: una story in business class con un messaggio sprezzante: "La gente sparge odio mentre io sono in business class". Questo passaggio ha segnato la fine.</p>
+                <p>La conseguenza diretta è stata la revoca del titolo per "tolleranza zero". Ma la storia non si è conclusa lì: la vicenda è diventata il catalizzatore di un'escalation politica che ha trascinato la controversia dalle pagine di gossip alle aule del parlamento, danneggiando l'immagine della Finlandia.</p>
+            </div>
+        </section>
+
+        <!-- MAIN GRID 18 DEC -->
+        <main class="grid grid-cols-1 lg:grid-cols-5 gap-0">
+            <!-- COL 1: Popcorn & Gravitas -->
+            <article class="lg:col-span-1 separator-r">
+                <h3 class="font-headline font-bold text-xl mb-2 leading-tight text-red-800">Il Popcorn e la Gravitas</h3>
+                <h4 class="font-sans-condensed font-bold text-sm mb-4 leading-snug">Quando Spider-Man incontra il Processo di Norimberga: la banalizzazione della storia.</h4>
+                <div class="font-body text-xs leading-relaxed text-justify-news">
+                    <p class="mb-3"><span class="font-bold uppercase">Cinema.</span> La scelta di trasformare un evento come Norimberga in un film "popcorn" rivela una tendenza preoccupante. Il film di James Vanderbilt, con un Russell Crowe caricaturale, svuota di significato uno dei momenti più solenni del XX secolo.</p>
+                    <p class="mb-3">Quando l'intrattenimento tratta il pubblico con sufficienza, svilisce non solo l'opera, ma anche la gravitas della storia. Viene annullata ogni possibilità di riflessione in favore di una formula "caciarona".</p>
+                </div>
+            </article>
+            
+            <!-- COL 2: REVENGE POPCORN & Cartoon -->
+            <article class="lg:col-span-1 separator-r flex flex-col">
+                <div class="mb-4">
+                    <h3 class="font-headline font-bold text-xl mb-1">Revenge Popcorn</h3>
+                    <h4 class="font-sans-condensed text-xs mb-2 text-gray-600">Quando la politica diventa spettacolo sui social.</h4>
+                    <p class="font-body text-xs leading-relaxed text-justify-news">
+                        <span class="font-bold uppercase">Politica.</span> Invece di spegnere la polemica, la destra populista finlandese ha gettato benzina sul fuoco replicando il gesto razzista per "protesta". È la tattica del "revenge popcorn": una reazione plateale per il consumo social che ignora il cortocircuito storico di un popolo un tempo discriminato come "svedesi cinesi".
+                    </p>
+                </div>
+                <!-- Cartoon: Miss Popcorn -->
+                <div class="my-4 border border-gray-800 p-2 bg-gray-100 text-center relative">
+                    <svg viewBox="0 0 200 150" class="w-full h-auto opacity-80" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="10" y="10" width="180" height="130" stroke="black" fill="white"/>
+                        <!-- Popcorn Bucket -->
+                        <path d="M70 120 L60 60 L140 60 L130 120 Z" fill="white" stroke="red" stroke-width="2"/>
+                        <line x1="80" y1="60" x2="75" y2="120" stroke="red" stroke-width="2" />
+                        <line x1="100" y1="60" x2="100" y2="120" stroke="red" stroke-width="2" />
+                        <line x1="120" y1="60" x2="125" y2="120" stroke="red" stroke-width="2" />
+                        <!-- Popcorn kernels -->
+                        <circle cx="70" cy="50" r="5" fill="#facc15" stroke="none" />
+                        <circle cx="85" cy="45" r="6" fill="#facc15" stroke="none" />
+                        <circle cx="100" cy="50" r="7" fill="#facc15" stroke="none" />
+                        <circle cx="115" cy="45" r="5" fill="#facc15" stroke="none" />
+                        <circle cx="130" cy="50" r="6" fill="#facc15" stroke="none" />
+                        <!-- Sash -->
+                        <path d="M65 110 Q100 120 135 70" fill="none" stroke="blue" stroke-width="8" class="opacity-50"/>
+                        <text x="100" y="105" font-family="sans-serif" font-size="8" font-weight="bold" fill="white" stroke="none" transform="rotate(-15 100 100)">MISS POPCORN</text>
+                    </svg>
+                    <p class="font-handwriting text-xs mt-1 font-bold font-sans italic text-gray-500">"POLITICA DA SGRANOCCHIARE"</p>
+                </div>
+            </article>
+
+            <!-- COL 3: Webfare -->
+            <article class="lg:col-span-1 separator-r">
+                <h3 class="font-headline font-bold text-xl mb-1">Webfare: Il Valore Nascosto</h3>
+                <h4 class="font-sans-condensed text-xs mb-2 text-gray-600">Il tesoro invisibile generato dai nostri clic.</h4>
+                <div class="font-body text-xs leading-relaxed text-justify-news">
+                    <p class="mb-3"><span class="font-bold uppercase">Economia.</span> Mentre discutiamo di crisi reputazionali, un'altra trasformazione avviene sotto i nostri occhi. Ogni nostra azione online — ogni like, ogni ricerca — genera un "Webfare", un capitale invisibile che ridefinisce le gerarchie globali.</p>
+                    <p class="mb-3">Non siamo più solo consumatori, ma produttori di documenti ("documedialità"). Questo "tempo produttivo" alimenta l'intelligenza artificiale e crea un patrimonio collettivo che prescinde dal merito. Riconoscere questo valore è il primo passo per un nuovo welfare.</p>
+                </div>
+            </article>
+
+            <!-- COL 4 & 5: Japan & Responsibility -->
+            <div class="lg:col-span-2 flex flex-col md:flex-row gap-4">
+                <!-- JAPAN -->
+                <article class="flex-1 separator-r md:border-r-0 md:pr-0">
+                    <h3 class="font-headline font-bold text-lg mb-1 text-blue-800">Il Dilemma del Giappone</h3>
+                    <h4 class="font-sans-condensed text-xs mb-2">Demografia, robot e il futuro del Welfare.</h4>
+                    <p class="font-body text-xs leading-relaxed text-justify-news mb-2">
+                        Di fronte a una crisi demografica senza precedenti, il Giappone punta tutto sulla robotica per l'assistenza. Entro il 2035 si prevedono 370.000 caregiver robotici. Ma la vera risorsa potrebbe essere proprio il "Webfare": il valore generato dai dati di una popolazione anziana ma connessa potrebbe finanziare il welfare del futuro.
+                    </p>
+                </article>
+                <!-- RESPONSIBILITY -->
+                <article class="flex-1">
+                    <h3 class="font-headline font-bold text-lg mb-1">Rappresentare una Nazione</h3>
+                    <h4 class="font-sans-condensed text-xs mb-2">Una nuova responsabilità collettiva nell'era digitale.</h4>
+                    <div class="font-body text-xs leading-relaxed text-justify-news bg-gray-100 p-2 border border-gray-300 mb-2">
+                        <p class="mb-1"><strong>IL DATO:</strong> Ogni cittadino è un ambasciatore involontario della propria cultura.</p>
+                        <p class="mb-1"><strong>LA LEZIONE:</strong> Le azioni individuali hanno un impatto diretto sul Soft Power nazionale.</p>
+                    </div>
+                    <p class="font-body text-xs leading-relaxed text-justify-news">
+                        Nell'era della documedialità, la distinzione tra vita privata e impatto pubblico è scomparsa. Riconoscere questo "valore nascosto" — culturale, reputazionale ed economico — è il primo passo per costruire società più resilienti.
+                    </p>
+                </article>
+            </div>
+        </main>
+
+        <hr class="border-t-2 border-black my-6">
+
+        <!-- BOTTOM SECTION 18 DEC -->
+        <section class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+            <div class="lg:col-span-3">
+                <h2 class="font-masthead font-bold text-4xl mb-2">Webfare: Verso un'Economia del Bisogno</h2>
+                <h3 class="font-sans-condensed font-bold text-lg text-gray-700 mb-4">Come la produzione di dati può trasformarsi in ricchezza collettiva.</h3>
+                <div class="font-body text-sm leading-snug text-justify-news columns-1 md:columns-3 gap-6">
+                    <p class="mb-3 first-letter-drop">L'idea che il capitale generato dalle nostre vite digitali possa essere sfruttato per il bene collettivo non è un'utopia. Il Webfare è un Welfare digitale che non si basa sulla redistribuzione di valori esistenti, ma sulla capitalizzazione di questa risorsa inedita. È un capitale che prescinde dal merito e punta sul bisogno.</p>
+                    <p class="mb-3">Attività apparentemente disparate come contare i propri passi o guardare una partita producono valore. Questo nuovo paradigma livella il campo di gioco: ogni cittadino connesso diventa un produttore di materia prima per l'economia del futuro.</p>
+                    <p class="mb-3">La sfida è politica: come redistribuire questa ricchezza? La tecnologia, vista sotto questa luce, cessa di essere una minaccia per diventare uno strumento potentissimo per valorizzare il capitale umano.</p>
+                </div>
+            </div>
+            <div class="lg:col-span-1 border-l pl-4 border-gray-300">
+                <div class="mb-4">
+                    <h3 class="font-masthead font-bold italic text-2xl border-b border-black pb-1 mb-2">Polpo's Version</h3>
+                    <div class="float-left w-16 h-16 mr-3 border border-gray-400 p-1 bg-white mb-2">
+                        <svg viewBox="0 0 100 100" class="w-full h-full" xmlns="http://www.w3.org/2000/svg"><path d="M50 15 C30 15 15 30 15 50 C15 65 25 75 30 75 C35 75 35 65 30 60 C25 55 25 45 30 40 C35 35 65 35 70 40 C75 45 75 55 70 60 C65 65 65 75 70 75 C75 75 85 65 85 50 C85 30 70 15 50 15 Z" fill="#999" stroke="#666" stroke-width="2"/><path d="M20 50 Q10 60 15 70 Q20 80 10 85" fill="none" stroke="#999" stroke-width="8" stroke-linecap="round"/><path d="M80 50 Q90 60 85 70 Q80 80 90 85" fill="none" stroke="#999" stroke-width="8" stroke-linecap="round"/><circle cx="40" cy="45" r="3" fill="#333"/><circle cx="60" cy="45" r="3" fill="#333"/><path d="M42 55 Q50 62 58 55" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round"/></svg>
+                    </div>
+                    <p class="font-body text-xs text-justify-news"><span class="font-bold drop-cap text-3xl float-left mr-1">I</span>l vero capitale non è quello che spendiamo, ma quello che generiamo vivendo. Ogni nostra traccia digitale è una moneta che non sapevamo di avere.</p>
+                </div>
+                <div class="bg-blue-100 p-3 mt-4 text-center border border-blue-200">
+                    <h5 class="font-sans-condensed font-bold text-blue-800 uppercase text-xs mb-1">La Citazione</h5>
+                    <p class="font-serif text-xs italic leading-tight">"Ogni clic, ogni visualizzazione, ogni interazione produce un capitale invisibile che ridefinisce le gerarchie del potere."</p>
+                    <p class="text-[10px] mt-1 font-bold uppercase">Il Valore Nascosto</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Clean Footer -->
+        <footer class="mt-8 border-t border-gray-400 pt-2 text-center">
+            <p class="text-[10px] font-sans text-gray-500 uppercase"></p>
+        </footer>
+    </div>
+
+    <!-- =========================================
+         EDITION 17 DEC (HIDDEN)
+         ========================================= -->
+    <div id="edition-17-dic" class="hidden-edition max-w-[1400px] mx-auto bg-white shadow-xl p-4 md:p-8 border-t-4 border-red-700">
         <!-- HEADER 17 DEC -->
         <header class="mb-6">
             <div class="flex flex-col md:flex-row justify-between items-center border-b-2 border-black pb-4 mb-2">
@@ -103,9 +258,6 @@
                 <!-- Title -->
                 <div class="flex-1 text-center px-4">
                     <h1 class="font-masthead font-black text-6xl md:text-9xl tracking-tighter leading-none transform scale-y-110">IL POLPULISTA</h1>
-                    <div class="relative -mt-2 mb-2">
-                        <div class="absolute top-1/2 left-0 w-full h-px bg-black -z-0"></div>
-                    </div>
                 </div>
                 <!-- Right Polpo -->
                 <div class="hidden md:flex w-32 h-24 items-center justify-center p-1">
@@ -114,7 +266,7 @@
             </div>
             <div class="flex flex-col md:flex-row justify-between items-center border-b border-black py-1 text-xs font-sans-condensed uppercase tracking-widest">
                 <div class="md:w-1/3 text-gray-500">L'Insonnia della Ragione</div>
-                <div class="md:w-1/3 text-center font-bold text-sm">DIRETTORE IL POLPO DELLA DOMENICA</div>
+                <div class="md:w-1/3 text-center font-bold text-sm">IL POLPO DELLA DOMENICA</div>
                 <div class="md:w-1/3 text-right">Mercoledì 17 Dicembre 2025</div>
             </div>
         </header>
@@ -264,9 +416,6 @@
                 <!-- Title -->
                 <div class="flex-1 text-center px-4">
                     <h1 class="font-masthead font-black text-6xl md:text-9xl tracking-tighter leading-none transform scale-y-110">IL POLPULISTA</h1>
-                    <div class="relative -mt-2 mb-2">
-                        <div class="absolute top-1/2 left-0 w-full h-px bg-black -z-0"></div>
-                    </div>
                 </div>
                 <!-- Right Polpo -->
                 <div class="hidden md:flex w-32 h-24 items-center justify-center p-1">
@@ -274,8 +423,8 @@
                 </div>
             </div>
             <div class="flex flex-col md:flex-row justify-between items-center border-b border-black py-1 text-xs font-sans-condensed uppercase tracking-widest">
-                <div class="md:w-1/3 text-gray-500">Analisi Psicopolitica del Presente</div>
-                <div class="md:w-1/3 text-center font-bold text-sm">DIRETTORE IL POLPO DELLA DOMENICA</div>
+                <div class="md:w-1/3 text-gray-500">Il Masochismo delle Democrazie</div>
+                <div class="md:w-1/3 text-center font-bold text-sm">IL POLPO DELLA DOMENICA</div>
                 <div class="md:w-1/3 text-right">Martedì 16 Dicembre 2025</div>
             </div>
         </header>
@@ -398,7 +547,6 @@
                  <div class="flex-1 text-center px-4">
                      <h1 class="font-masthead font-black text-6xl md:text-9xl tracking-tighter leading-none transform scale-y-110">IL POLPULISTA</h1>
                      <div class="relative -mt-2 mb-2">
-                        <!-- Removed "quotidiano" text -->
                         <div class="absolute top-1/2 left-0 w-full h-px bg-black -z-0"></div>
                      </div>
                  </div>
@@ -409,7 +557,7 @@
             </div>
             <div class="flex flex-col md:flex-row justify-between items-center border-b border-black py-1 text-xs font-sans-condensed uppercase tracking-widest">
                 <div class="md:w-1/3">Anatomia del Mondo Nuovo</div>
-                <div class="md:w-1/3 text-center font-bold text-sm">DIRETTORE IL POLPO DELLA DOMENICA</div>
+                <div class="md:w-1/3 text-center font-bold text-sm">IL POLPO DELLA DOMENICA</div>
                 <!-- Removed Price -->
                 <div class="md:w-1/3 text-right">Martedì 9 Dicembre 2025</div>
             </div>
@@ -526,24 +674,30 @@
     <script>
         function switchEdition(edition) {
             // Get all content divs
+            const ed18 = document.getElementById('edition-18-dic');
             const ed17 = document.getElementById('edition-17-dic');
             const ed16 = document.getElementById('edition-16-dic');
             const ed09 = document.getElementById('edition-09-dic');
             
             // Get all buttons
+            const btn18 = document.getElementById('btn-18-dic');
             const btn17 = document.getElementById('btn-17-dic');
             const btn16 = document.getElementById('btn-16-dic');
             const btn09 = document.getElementById('btn-09-dic');
 
             // Reset logic
-            [ed17, ed16, ed09].forEach(el => el.classList.add('hidden-edition'));
-            [btn17, btn16, btn09].forEach(btn => {
+            [ed18, ed17, ed16, ed09].forEach(el => el.classList.add('hidden-edition'));
+            [btn18, btn17, btn16, btn09].forEach(btn => {
                 btn.classList.remove('tab-active');
                 btn.classList.add('tab-inactive');
             });
 
             // Activate chosen
-            if (edition === '17-dic') {
+            if (edition === '18-dic') {
+                ed18.classList.remove('hidden-edition');
+                btn18.classList.add('tab-active');
+                btn18.classList.remove('tab-inactive');
+            } else if (edition === '17-dic') {
                 ed17.classList.remove('hidden-edition');
                 btn17.classList.add('tab-active');
                 btn17.classList.remove('tab-inactive');
